@@ -109,37 +109,38 @@ class MinhaSuiteSpecHenrique extends DesafioSpec {
         then:
         calculadora.calcular(solicitacao(valorTabela: valor, convenio: convenio)) == esperado
 
+// @formatter:off
         where:
-        convenio                                                                                                                                                                                                                                                     | valor
-        "saude total"                                                                                                                                                                                                                                                | 1000
-        "vida plena"                                                                                                                                                                                                                                                 | 213459.817269
-        "bem viver"                                                                                                                                                                                                                                                  | 1.18726398
-        "saude total"                                                                                                                                                                                                                                                | 0.124708
+        convenio               | valor
+        "saude total"          | 1000
+        "vida plena"           | 213459.817269
+        "bem viver"            | 1.18726398
+        "saude total"          | 0.124708
 
         //maiusuclas
-        "Bem Viver"                                                                                                                                                                                                                                                  | 1351427639
-        "Saude Total"                                                                                                                                                                                                                                                | 1000.3333333
-        "BEM VIVER"                                                                                                                                                                                                                                                  | 67.420
-        "VIDA PLENA"                                                                                                                                                                                                                                                 | 123.1267498124
-        "viDa PLEnA"                                                                                                                                                                                                                                                 | 321
+        "Bem Viver"             | 1351427639
+        "Saude Total"           | 1000.3333333
+        "BEM VIVER"             | 67.420
+        "VIDA PLENA"            | 123.1267498124
+        "viDa PLEnA"            | 321
 
         //acento
-        "saúde total"                                                                                                                                                                                                                                                | 123.231647
-        "sâúdè tótàl"                                                                                                                                                                                                                                                | 444.123
-        "s̗̀́̚ā̛̘̀û̘̖̈d̙́̆̚e̛̛̅̄ ̙̃̀̚ẗ̛̙̅ó̘̖̀t̗̗̀̀à̙̖́l̘̀̄̚"                                                                                                                                                                                                    | 30   //https://henriqf.github.io/pwa-formatador/
-        "ḃ̘ê̛ṁ̙ ̙̇v̛̄ï̚v̙̈ė̚r̙̂"                                                                                                                                                                                                                                | 10000.21346
+        "saúde total"           | 123.231647
+        "sâúdè tótàl"           | 444.123
+        "s̗̀́̚ā̛̘̀û̘̖̈d̙́̆̚e̛̛̅̄ ̙̃̀̚ẗ̛̙̅ó̘̖̀t̗̗̀̀à̙̖́l̘̀̄̚"   | 30   //https://henriqf.github.io/pwa-formatador/
+        "ḃ̘ê̛ṁ̙ ̙̇v̛̄ï̚v̙̈ė̚r̙̂"           | 10000.21346
         "v̘̗̖̘̖̘̘̗̗̖̗́̅̀́́̃̇̈̅̇̄̇̚í̛̙̖̗̙̗̗̖̗̖̆́̇̂̀̂̀̈́̇̈̚̚d̛̘̙̗̖̖̖̘̗̖̃̆̇̃̂̀̃̀̈̈̀̈̚̚ẫ̖̗̖̘̘̙̖́̄̀̈̀̂̆̂̈̇̚̚̚̚̚ ̛̛̘̖̗̖̙̘̗̙̙́̂̈̈̄̇̆̃̅̆̃̄̚p̛̛̛̘̗̗̘̙̙̖̖̃̈́̈̀̇̇̂̈̂̇̈̚l̗̘̗̖̖̗̘̘̖̘̖̈̀̈̇́̅̄̅̃̇̇̆̚è̙̗̗̙̖̘̙̖̗̖̙̖̃̆̆̃́̇̇̃̈̀̄n̛̘̘̗̙̗̘̙̘̄̅̈́̃̂́̂̈́̀̂̚̚̚â̘̙̗̙̙̗̙̘̗̖̄̇̅̅̄̈́̇̄̈̇̚̚" | 33
 
         //espaco branco
-        "  saude total  "                                                                                                                                                                                                                                            | 15423.1794654
-        "bem viver\t\n\r   "                                                                                                                                                                                                                                         | 1000.36298143124
-        "\n\r\t\fvida plena"                                                                                                                                                                                                                                         | 1000.223
-        "    vida plena    "                                                                                                                                                                                                                                         | 32125478901239786452123
+        "  saude total  "      | 15423.1794654
+        "bem viver\t\n\r   "   | 1000.36298143124
+        "\n\r\t\fvida plena"   | 1000.223
+        "    vida plena    "   | 32125478901239786452123
 
         //tudo
-
-        " \r\n Sâúdè tótàL\t "                                                                                                                                                                                                                                       | 4217356.432158
-        "\t \t \n \rS̛̘̃̇̆̚ā̛̙̂̈̚Ư̗̗̇̆̃d̘̗̙̆̆̀ē̛̖̆̇̚ ̛̘̗̄̄́T̙̙̗̀̅̇Ờ̗̖̄̇t̛̙̘̂̂̅A̙̘̙̅̆̀L̗̗̄̈́̚  \t"                                                                                                                                                               | 1234123.326918
+        " \r\n Sâúdè tótàL\t "                 | 4217356.432158
+        "\t \t \n \rS̛̘̃̇̆̚ā̛̙̂̈̚Ư̗̗̇̆̃d̘̗̙̆̆̀ē̛̖̆̇̚ ̛̘̗̄̄́T̙̙̗̀̅̇Ờ̗̖̄̇t̛̙̘̂̂̅A̙̘̙̅̆̀L̗̗̄̈́̚  \t"  | 1234123.326918
+// @formatter:on
     }
 
     @Unroll
@@ -331,7 +332,7 @@ class MinhaSuiteSpecHenrique extends DesafioSpec {
         ]
     }
 
-    def "funcao calcular responde consistentemente"(){
+    def "funcao calcular responde consistentemente"() {
         when:
         def A = parametros_closure()
         def B = parametros_closure()

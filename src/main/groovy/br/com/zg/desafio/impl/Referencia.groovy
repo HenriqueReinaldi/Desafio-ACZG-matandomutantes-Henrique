@@ -21,6 +21,15 @@ class Referencia implements CalculadoraRepasse {
     private static final BigDecimal TAXA_DESCONTO  = new BigDecimal('0.10')
     private static final Set<String> PARCEIROS = ['saude total', 'vida plena', 'bem viver'] as Set
 
+    /*
+    Lista de erros que os testes perderam?:
+
+    R3 antes de R2
+    TESTAR Para modo HALF EVEN
+    se entrada for depois de saida
+    se valor de tabela for ausente (mensagens de erros corretas)
+    * */
+
     @Override
     BigDecimal calcular(SolicitacaoRepasse solicitacao) {
 

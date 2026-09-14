@@ -3,7 +3,6 @@ package br.com.zg.desafio
 import spock.lang.Unroll
 
 import java.math.RoundingMode
-import java.time.Duration
 import java.time.format.DateTimeParseException
 
 /**
@@ -22,8 +21,7 @@ import java.time.format.DateTimeParseException
  * Eles não valem ponto. Pode apagá-los.
  */
 
-class MinhaSuiteSpecHenrique extends DesafioSpec {
-
+class MinhaSuiteHenriqueSpec extends DesafioSpec {
     // ---- bloco when/then ----
     def "repassa o valor de tabela quando não há adicional, desconto nem glosa"() {
         when:
@@ -81,7 +79,6 @@ class MinhaSuiteSpecHenrique extends DesafioSpec {
         '24 horas e um pouco' | '2026-05-04T08:00:00' | '2026-05-05T08:00:01' | 12325325.123
         '1 ano'               | '2026-05-04T08:00:00' | '2027-05-04T08:00:00' | 0
     }
-
     @Unroll
     def "R2: uma internação de menos de 24h (#tempo) nao gera taxas extras"(BigDecimal valor) {
         when:
@@ -142,7 +139,6 @@ class MinhaSuiteSpecHenrique extends DesafioSpec {
         "\t \t \n \rS̛̘̃̇̆̚ā̛̙̂̈̚Ư̗̗̇̆̃d̘̗̙̆̆̀ē̛̖̆̇̚ ̛̘̗̄̄́T̙̙̗̀̅̇Ờ̗̖̄̇t̛̙̘̂̂̅A̙̘̙̅̆̀L̗̗̄̈́̚  \t"  | 1234123.326918
 // @formatter:on
     }
-
     @Unroll
     def "R3: #convenio não é parceiro; Sem descontos."(BigDecimal valor) {
         when:
@@ -245,7 +241,9 @@ class MinhaSuiteSpecHenrique extends DesafioSpec {
         calculadora.calcular(solicitacao(valorTabela: valor))
 
         then:
-        thrown(DadosInvalidosException)
+        def ex = thrown(DadosInvalidosException)
+        println ex.message
+        //thrown(DadosInvalidosException)
 
         where:
         valor << [null] + (-1000000..-1).step(10000)
